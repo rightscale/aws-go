@@ -3,6 +3,7 @@ package aws
 import (
 	"encoding/xml"
 	"fmt"
+	"github.com/clbanning/mxj"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -65,7 +66,16 @@ func (c *QueryClient) Do(op, method, uri string, req, resp interface{}) error {
 		return queryErr.Err(httpResp.StatusCode)
 	}
 
-	if resp != nil {
+	if resp == nil {
+		return nil
+	}
+	if respMap, ok := resp.(*mxj.Map); ok {
+		// resp points to interface{}, use mxj to deserialize into maps/slices/strings
+		newMap, err := mxj.NewMapXmlReader(httpResp.Body, true)
+		*respMap = newMap
+		return err
+	} else {
+		// resp points to a proper struct, use stdlib to deserialize into it
 		return xml.NewDecoder(httpResp.Body).Decode(resp)
 	}
 	return nil

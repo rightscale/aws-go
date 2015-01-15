@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/stripe/aws-go/aws"
-	"github.com/stripe/aws-go/gen/endpoints"
+	"github.com/rightscale/aws-go/aws"
+	"github.com/rightscale/aws-go/gen/endpoints"
 )
 
 // CodeDeploy is a client for AWS CodeDeploy.

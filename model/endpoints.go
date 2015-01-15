@@ -153,7 +153,8 @@ func Lookup(service, region string) (uri, newService, newRegion string) {
   {{ end }}
   {{ end }}
 
-  panic("unknown endpoint for " + service + " in " + region)
+  return "", "", ""
+  //panic("unknown endpoint for " + service + " in " + region)
 }
 
 func format(uri, service, region string) string {

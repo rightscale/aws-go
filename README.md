@@ -1,4 +1,4 @@
-# WARNING: you are seeing the rightscale branch of a fork of strip/aws-go
+# WARNING: you are seeing the rightscale branch of a fork of stripe/aws-go
 
 The rightscale branch has a number of changes:
 - make the Do functions of the various "protocols" in the aws package support deserializing

@@ -5,9 +5,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/stripe/aws-go/aws"
-	"github.com/stripe/aws-go/gen/iam"
-	"github.com/stripe/aws-go/gen/sqs"
+	"github.com/rightscale/aws-go/aws"
+	"github.com/rightscale/aws-go/gen/iam"
+	"github.com/rightscale/aws-go/gen/sqs"
 )
 
 func Test_SQSUnmarshalXML(t *testing.T) {

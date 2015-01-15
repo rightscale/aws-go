@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stripe/aws-go/aws"
+	"github.com/rightscale/aws-go/aws"
 )
 
 func TestUnixTimestampSerialization(t *testing.T) {
